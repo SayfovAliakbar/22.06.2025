@@ -209,7 +209,7 @@ const App = () => {
       >
         <Input size="large" placeholder="Name" prefix={<UserOutlined />} value={addName} onChange={(e) => setAddName(e.target.value)}/>
         <br/><br/>
-        <Select value={addStatus} onChange={(value) => setAddStatus(value)}>
+        <Select value={addStatus} onChange={(value) => setAddStatus(value)} style={{width: "120px"}}>
           <Select.Option value="true">Active</Select.Option>
           <Select.Option value="false">Inactive</Select.Option>
         </Select>
@@ -225,7 +225,7 @@ const App = () => {
       >
         <Input size="large" placeholder="Name" prefix={<UserOutlined />} value={editName} onChange={(e) => setEditName(e.target.value)}/>
         <br/><br/>
-        <Select value={editStatus} onChange={(value) => setEditStatus(value)}>
+        <Select value={editStatus} onChange={(value) => setEditStatus(value)} style={{width: "120px"}}>
           <Select.Option value="true">Active</Select.Option>
           <Select.Option value="false">Inactive</Select.Option>
         </Select>
