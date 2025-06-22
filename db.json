@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "img": "./src//assets/Frame (9).png",
+      "name": "Walnut MagSafe Stand 1",
+      "status": true
+    },
+    {
+      "id": "2",
+      "img": "./src/assets/Frame (10).png",
+      "name": "Walnut MagSafe Stand 2",
+      "status": false
+    },
+    {
+      "id": "3",
+      "img": "./src/assets/Frame (11).png",
+      "name": "Walnut MagSafe Stand 3",
+      "status": true
+    }
+  ]
+}
