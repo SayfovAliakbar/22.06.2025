@@ -186,7 +186,7 @@ const App = () => {
 
       <br/><br/><br/>
 
-      <div className='flex justify-around items-center'>
+      <div className='flex flex-wrap gap-[15px] justify-around items-center'>
         <input type="search" placeholder='Search...' className='border w-[250px] h-[30px] rounded-[10px]' value={search} onChange={(e) => setSearch(e.target.value)}/>
 
         <Select value={select} onChange={(value) => setSelect(value)} style={{width: "200px"}}>
