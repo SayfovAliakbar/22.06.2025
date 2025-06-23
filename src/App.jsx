@@ -110,7 +110,7 @@ const App = () => {
     try {
       await fetch(`${API}/${idx}`, {
         method: "PUT",
-        headers: {"Cotent-type":"application/json"},
+        headers: {"Content-type":"application/json"},
         body:JSON.stringify(updeteUser)
       })
       getUser()
@@ -133,6 +133,26 @@ const App = () => {
     setInfoName(e.name)
     setInfoStatus(e.status ? "Active" : "Inactive")
     setInfoImg(e.img)
+  }
+
+  async function changeStatus(el) {
+    let updeteUser = {
+      img: el.img,
+      name: el.name, 
+      status: !el.status,
+    }
+
+    try {
+      await fetch(`${API}/${el.id}`, {
+        method: "PUT",
+        headers: {"Content-type":"application/json"},
+        body:JSON.stringify(updeteUser)
+      })
+      getUser()
+    } catch (error) {
+      console.error(error);
+      
+    }
   }
 
   return (
@@ -265,7 +285,7 @@ const App = () => {
 
                   <Button onClick={() => openInfoModal(el)}>Info</Button>
 
-                  <input type="checkbox" />
+                  <input type="checkbox" onClick={() => changeStatus(el)}/>
                 </div>
               </div>
             )
