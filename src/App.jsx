@@ -64,12 +64,13 @@ const App = () => {
 
   let [addName, setAddName] = useState("")
   let [addStatus, setAddStatus] = useState("true")
+  let [addImg, setAddImg] = useState("")
 
   async function addUser(){
     let newUser = {
       name: addName,
       status: addStatus == "true"? true:false,
-      img: "./src/assets/Frame (10).png"
+      img: addImg
     }
     try {
       await fetch(API, {
@@ -227,8 +228,14 @@ const App = () => {
         onOk={addUser}
         onCancel={handleCancel}
       >
-        <Input size="large" placeholder="Name" prefix={<UserOutlined />} value={addName} onChange={(e) => setAddName(e.target.value)}/>
+        <Input size="large" placeholder="Url" prefix={<UserOutlined />} value={addImg} onChange={(e) => setAddImg(e.target.value)}/>
+
         <br/><br/>
+
+        <Input size="large" placeholder="Name" prefix={<UserOutlined />} value={addName} onChange={(e) => setAddName(e.target.value)}/>
+
+        <br/><br/>
+
         <Select value={addStatus} onChange={(value) => setAddStatus(value)} style={{width: "120px"}}>
           <Select.Option value="true">Active</Select.Option>
           <Select.Option value="false">Inactive</Select.Option>
@@ -272,7 +279,7 @@ const App = () => {
           data.filter((e) => e.name.toLowerCase().includes(search.toLowerCase())).filter((ele) => ele.status.toString().includes(select)).map((el) => {
             return (
               <div key={el.id} className='text-center'>
-                <img src={el.img} alt="" />
+                <img src={el.img} alt="" className='w-[350px] h-[500px]'/>
                 <br/>
                 <p>{el.name}</p>
                 <br/>
